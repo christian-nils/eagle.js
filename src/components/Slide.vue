@@ -2,11 +2,11 @@
 eg-transition(:enter='enterTransition', :leave='leaveTransition')
   .eg-slide(v-if='active')
     .eg-slide-header
-      <slot name="header"></slot>
-    .eg-slide-footer
+      slot(:name='`header`')
+    .eg-slide-content
       slot
     .eg-slide-footer
-      <slot name="footer"></slot>
+      slot(:name='`footer`')
 </template>
 
 <script>

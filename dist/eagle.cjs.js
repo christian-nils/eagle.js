@@ -499,7 +499,7 @@ const __vue_script__ = script;
   );
 
 var script$1 = {
-  name: 'slide',
+  name: "slide",
   props: {
     skip: {
       "default": false
@@ -530,6 +530,10 @@ var script$1 = {
     },
     keyboardNavigation: {
       "default": true
+    },
+    slideNumber: {
+      type: Number,
+      "default": null
     }
   },
   data: function data() {
@@ -538,7 +542,7 @@ var script$1 = {
       active: false,
       isSlide: true,
       slideTimer: 0,
-      direction: 'next',
+      direction: "next",
       transitions: {
         next: {
           enter: this.enterNext || this.enter,
@@ -610,10 +614,17 @@ var __vue_render__ = function() {
         ? _c("div", { staticClass: "eg-slide" }, [
             _c(
               "div",
+              { staticClass: "eg-slide-header" },
+              [_vm._t("header")],
+              2
+            ),
+            _c(
+              "div",
               { staticClass: "eg-slide-content" },
               [_vm._t("default")],
               2
-            )
+            ),
+            _c("div", { staticClass: "eg-slide-footer" }, [_vm._t("footer")], 2)
           ])
         : _vm._e()
     ]
