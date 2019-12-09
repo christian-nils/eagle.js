@@ -1,32 +1,37 @@
 <template lang='pug'>
 eg-transition(:enter='enterTransition', :leave='leaveTransition')
   .eg-slide(v-if='active')
+    -eg-slide-header
+      slot(name="header")
     .eg-slide-content
       slot
+    .eg-slide-footer
+      slot(name="footer")
 </template>
 
 <script>
 export default {
-  name: 'slide',
+  name: "slide",
   props: {
-    skip: {default: false},
-    enter: {default: null},
-    enterPrev: {default: null},
-    enterNext: {default: null},
-    leave: {default: null},
-    leavePrev: {default: null},
-    leaveNext: {default: null},
-    steps: {default: 1},
-    mouseNavigation: {default: true},
-    keyboardNavigation: {default: true}
+    skip: { default: false },
+    enter: { default: null },
+    enterPrev: { default: null },
+    enterNext: { default: null },
+    leave: { default: null },
+    leavePrev: { default: null },
+    leaveNext: { default: null },
+    steps: { default: 1 },
+    mouseNavigation: { default: true },
+    keyboardNavigation: { default: true },
+    slideNumber: { type: Number, default: null }
   },
-  data: function () {
+  data: function() {
     return {
       step: 1,
       active: false,
       isSlide: true,
       slideTimer: 0,
-      direction: 'next',
+      direction: "next",
       transitions: {
         next: {
           enter: this.enterNext || this.enter,
@@ -37,47 +42,47 @@ export default {
           leave: this.leavePrev || this.leave
         }
       }
-    }
+    };
   },
   computed: {
-    enterTransition: function () {
-      return this.transitions[this.direction].enter
+    enterTransition: function() {
+      return this.transitions[this.direction].enter;
     },
-    leaveTransition: function () {
-      return this.transitions[this.direction].leave
+    leaveTransition: function() {
+      return this.transitions[this.direction].leave;
     }
   },
   methods: {
-    nextStep: function () {
+    nextStep: function() {
       if (this.step === this.steps) {
-        this.$parent.nextSlide()
+        this.$parent.nextSlide();
       } else {
-        this.step++
+        this.step++;
       }
     },
-    previousStep: function () {
+    previousStep: function() {
       if (this.step === 1) {
-        this.$parent.previousSlide()
+        this.$parent.previousSlide();
       } else {
-        this.step--
+        this.step--;
       }
     }
   },
   watch: {
-    step: function (val) {
-      this.$parent.step = val
+    step: function(val) {
+      this.$parent.step = val;
     },
-    active: function (val) {
-      var self = this
+    active: function(val) {
+      var self = this;
       if (val) {
-        this.slideTimer = 0
-        this.timerUpdater = setInterval(function () {
-          self.slideTimer++
-        }, 1000)
+        this.slideTimer = 0;
+        this.timerUpdater = setInterval(function() {
+          self.slideTimer++;
+        }, 1000);
       } else {
-        clearInterval(this.timerUpdater)
+        clearInterval(this.timerUpdater);
       }
     }
   }
-}
+};
 </script>
