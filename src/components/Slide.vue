@@ -3,7 +3,7 @@ eg-transition(:enter='enterTransition', :leave='leaveTransition')
   .eg-slide(v-if='active')
     .eg-slide-header
       <slot name="header"></slot>
-    .eg-slide-content
+    .eg-slide-footer
       slot
     .eg-slide-footer
       <slot name="footer"></slot>
