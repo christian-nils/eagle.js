@@ -92,7 +92,7 @@ var script = {
 
       if (this.mouseNavigation) {
         if ('ontouchstart' in window) {
-          window.addEventListener('touchstart', this.hanldeClick);
+          window.addEventListener('touchstart', this.handleClick);
         } else {
           window.addEventListener('click', this.handleClick);
           window.addEventListener('wheel', this.handleWheel);
@@ -464,7 +464,7 @@ const __vue_script__ = script;
   /* style */
   const __vue_inject_styles__ = function (inject) {
     if (!inject) return
-    inject("data-v-041c19be_0", { source: "@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);\n.eg-slideshow {\n  margin-top: 0;\n  background-attachment: fixed;\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\n.eg-slideshow h1,\n.eg-slideshow h2,\n.eg-slideshow h3 {\n  text-align: center;\n}\n.eg-slideshow h1 {\n  font-size: 4em;\n  margin-bottom: 0.1em;\n}\n.eg-slideshow h2 {\n  font-size: 3em;\n}\n.eg-slideshow h3 {\n  font-size: 2em;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow h4 {\n  font-size: 1.5em;\n}\n.eg-slideshow input {\n  font-size: 1em;\n}\n.eg-slideshow strong {\n  font-weight: bold;\n}\n.eg-slideshow .small {\n  font-size: 0.65em;\n}\n.eg-slideshow img {\n  max-width: 80%;\n}\n.eg-slideshow .eg-code-block {\n  font-family: \"Source Code Pro\", Courier;\n  text-align: left;\n  font-size: 0.5em;\n}\n.eg-slideshow .eg-code-block .box {\n  padding: 1em;\n}\n.eg-slideshow .eg-slide {\n  height: 100%;\n  overflow: hidden;\n  width: 100%;\n  position: absolute;\n}\n.eg-slideshow .subslide {\n  position: absolute;\n  margin-top: -1em;\n}\n.eg-slideshow .inline {\n  display: inline-block;\n}\n.eg-slideshow .center {\n  text-align: center;\n}\n.eg-slideshow .center p {\n  text-align: center;\n}\n.eg-slideshow .quarter {\n  display: inline-block;\n  width: 50%;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow .eg-switch .switch {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-radio .radiobutton {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-triggered-message {\n  position: absolute;\n}\n.eg-slideshow .button {\n  font-size: 1em;\n}\n.eg-slideshow .nodisplay {\n  display: none;\n}\n\n/*# sourceMappingURL=Slideshow.vue.map */", map: {"version":3,"sources":["Slideshow.vue"],"names":[],"mappings":"AAAA,oEAAoE;AACpE;EACE,aAAa;EACb,4BAA4B;EAC5B,kBAAkB;EAClB,YAAY;EACZ,WAAW;EACX,gBAAgB;AAClB;AACA;;;EAGE,kBAAkB;AACpB;AACA;EACE,cAAc;EACd,oBAAoB;AACtB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;EACd,oBAAoB;AACtB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,cAAc;AAChB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,cAAc;AAChB;AACA;EACE,uCAAuC;EACvC,gBAAgB;EAChB,gBAAgB;AAClB;AACA;EACE,YAAY;AACd;AACA;EACE,YAAY;EACZ,gBAAgB;EAChB,WAAW;EACX,kBAAkB;AACpB;AACA;EACE,kBAAkB;EAClB,gBAAgB;AAClB;AACA;EACE,qBAAqB;AACvB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,qBAAqB;EACrB,UAAU;EACV,oBAAoB;AACtB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,cAAc;AAChB;AACA;EACE,aAAa;AACf;;AAEA,wCAAwC","file":"Slideshow.vue","sourcesContent":["@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);\n.eg-slideshow {\n  margin-top: 0;\n  background-attachment: fixed;\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\n.eg-slideshow h1,\n.eg-slideshow h2,\n.eg-slideshow h3 {\n  text-align: center;\n}\n.eg-slideshow h1 {\n  font-size: 4em;\n  margin-bottom: 0.1em;\n}\n.eg-slideshow h2 {\n  font-size: 3em;\n}\n.eg-slideshow h3 {\n  font-size: 2em;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow h4 {\n  font-size: 1.5em;\n}\n.eg-slideshow input {\n  font-size: 1em;\n}\n.eg-slideshow strong {\n  font-weight: bold;\n}\n.eg-slideshow .small {\n  font-size: 0.65em;\n}\n.eg-slideshow img {\n  max-width: 80%;\n}\n.eg-slideshow .eg-code-block {\n  font-family: \"Source Code Pro\", Courier;\n  text-align: left;\n  font-size: 0.5em;\n}\n.eg-slideshow .eg-code-block .box {\n  padding: 1em;\n}\n.eg-slideshow .eg-slide {\n  height: 100%;\n  overflow: hidden;\n  width: 100%;\n  position: absolute;\n}\n.eg-slideshow .subslide {\n  position: absolute;\n  margin-top: -1em;\n}\n.eg-slideshow .inline {\n  display: inline-block;\n}\n.eg-slideshow .center {\n  text-align: center;\n}\n.eg-slideshow .center p {\n  text-align: center;\n}\n.eg-slideshow .quarter {\n  display: inline-block;\n  width: 50%;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow .eg-switch .switch {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-radio .radiobutton {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-triggered-message {\n  position: absolute;\n}\n.eg-slideshow .button {\n  font-size: 1em;\n}\n.eg-slideshow .nodisplay {\n  display: none;\n}\n\n/*# sourceMappingURL=Slideshow.vue.map */"]}, media: undefined });
+    inject("data-v-75f3b898_0", { source: "@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);\n.eg-slideshow {\n  margin-top: 0;\n  background-attachment: fixed;\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\n.eg-slideshow h1,\n.eg-slideshow h2,\n.eg-slideshow h3 {\n  text-align: center;\n}\n.eg-slideshow h1 {\n  font-size: 4em;\n  margin-bottom: 0.1em;\n}\n.eg-slideshow h2 {\n  font-size: 3em;\n}\n.eg-slideshow h3 {\n  font-size: 2em;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow h4 {\n  font-size: 1.5em;\n}\n.eg-slideshow input {\n  font-size: 1em;\n}\n.eg-slideshow strong {\n  font-weight: bold;\n}\n.eg-slideshow .small {\n  font-size: 0.65em;\n}\n.eg-slideshow img {\n  max-width: 80%;\n}\n.eg-slideshow .eg-code-block {\n  font-family: \"Source Code Pro\", Courier;\n  text-align: left;\n  font-size: 0.5em;\n}\n.eg-slideshow .eg-code-block .box {\n  padding: 1em;\n}\n.eg-slideshow .eg-slide {\n  height: 100%;\n  overflow: hidden;\n  width: 100%;\n  position: absolute;\n}\n.eg-slideshow .subslide {\n  position: absolute;\n  margin-top: -1em;\n}\n.eg-slideshow .inline {\n  display: inline-block;\n}\n.eg-slideshow .center {\n  text-align: center;\n}\n.eg-slideshow .center p {\n  text-align: center;\n}\n.eg-slideshow .quarter {\n  display: inline-block;\n  width: 50%;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow .eg-switch .switch {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-radio .radiobutton {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-triggered-message {\n  position: absolute;\n}\n.eg-slideshow .button {\n  font-size: 1em;\n}\n.eg-slideshow .nodisplay {\n  display: none;\n}\n\n/*# sourceMappingURL=Slideshow.vue.map */", map: {"version":3,"sources":["Slideshow.vue"],"names":[],"mappings":"AAAA,oEAAoE;AACpE;EACE,aAAa;EACb,4BAA4B;EAC5B,kBAAkB;EAClB,YAAY;EACZ,WAAW;EACX,gBAAgB;AAClB;AACA;;;EAGE,kBAAkB;AACpB;AACA;EACE,cAAc;EACd,oBAAoB;AACtB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;EACd,oBAAoB;AACtB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,cAAc;AAChB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,cAAc;AAChB;AACA;EACE,uCAAuC;EACvC,gBAAgB;EAChB,gBAAgB;AAClB;AACA;EACE,YAAY;AACd;AACA;EACE,YAAY;EACZ,gBAAgB;EAChB,WAAW;EACX,kBAAkB;AACpB;AACA;EACE,kBAAkB;EAClB,gBAAgB;AAClB;AACA;EACE,qBAAqB;AACvB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,qBAAqB;EACrB,UAAU;EACV,oBAAoB;AACtB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,cAAc;AAChB;AACA;EACE,aAAa;AACf;;AAEA,wCAAwC","file":"Slideshow.vue","sourcesContent":["@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);\n.eg-slideshow {\n  margin-top: 0;\n  background-attachment: fixed;\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\n.eg-slideshow h1,\n.eg-slideshow h2,\n.eg-slideshow h3 {\n  text-align: center;\n}\n.eg-slideshow h1 {\n  font-size: 4em;\n  margin-bottom: 0.1em;\n}\n.eg-slideshow h2 {\n  font-size: 3em;\n}\n.eg-slideshow h3 {\n  font-size: 2em;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow h4 {\n  font-size: 1.5em;\n}\n.eg-slideshow input {\n  font-size: 1em;\n}\n.eg-slideshow strong {\n  font-weight: bold;\n}\n.eg-slideshow .small {\n  font-size: 0.65em;\n}\n.eg-slideshow img {\n  max-width: 80%;\n}\n.eg-slideshow .eg-code-block {\n  font-family: \"Source Code Pro\", Courier;\n  text-align: left;\n  font-size: 0.5em;\n}\n.eg-slideshow .eg-code-block .box {\n  padding: 1em;\n}\n.eg-slideshow .eg-slide {\n  height: 100%;\n  overflow: hidden;\n  width: 100%;\n  position: absolute;\n}\n.eg-slideshow .subslide {\n  position: absolute;\n  margin-top: -1em;\n}\n.eg-slideshow .inline {\n  display: inline-block;\n}\n.eg-slideshow .center {\n  text-align: center;\n}\n.eg-slideshow .center p {\n  text-align: center;\n}\n.eg-slideshow .quarter {\n  display: inline-block;\n  width: 50%;\n  margin-bottom: 0.5em;\n}\n.eg-slideshow .eg-switch .switch {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-radio .radiobutton {\n  margin-right: 0.5em;\n}\n.eg-slideshow .eg-triggered-message {\n  position: absolute;\n}\n.eg-slideshow .button {\n  font-size: 1em;\n}\n.eg-slideshow .nodisplay {\n  display: none;\n}\n\n/*# sourceMappingURL=Slideshow.vue.map */"]}, media: undefined });
 
   };
   /* scoped */
@@ -475,16 +475,20 @@ const __vue_script__ = script;
   const __vue_is_functional_template__ = undefined;
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var Slideshow = normalizeComponent_1(
+  const __vue_component__ = normalizeComponent_1(
     {},
     __vue_inject_styles__,
     __vue_script__,
     __vue_scope_id__,
     __vue_is_functional_template__,
     __vue_module_identifier__,
+    false,
     browser,
+    undefined,
     undefined
   );
 
@@ -624,15 +628,19 @@ __vue_render__._withStripped = true;
   
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var Slide = normalizeComponent_1(
+  const __vue_component__$1 = normalizeComponent_1(
     { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
     __vue_inject_styles__$1,
     __vue_script__$1,
     __vue_scope_id__$1,
     __vue_is_functional_template__$1,
     __vue_module_identifier__$1,
+    false,
+    undefined,
     undefined,
     undefined
   );
@@ -684,15 +692,19 @@ __vue_render__$1._withStripped = true;
   
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var Transition = normalizeComponent_1(
+  const __vue_component__$2 = normalizeComponent_1(
     { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
     __vue_inject_styles__$2,
     __vue_script__$2,
     __vue_scope_id__$2,
     __vue_is_functional_template__$2,
     __vue_module_identifier__$2,
+    false,
+    undefined,
     undefined,
     undefined
   );
@@ -720,7 +732,7 @@ __vue_render__$2._withStripped = true;
   /* style */
   const __vue_inject_styles__$3 = function (inject) {
     if (!inject) return
-    inject("data-v-9cad53c8_0", { source: "\n.eg-modal {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n", map: {"version":3,"sources":["/Users/yao.ding/javascript/eagle.js/src/components/widgets/Modal.vue"],"names":[],"mappings":";AAcA;EACA,kBAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;AACA","file":"Modal.vue","sourcesContent":["<template lang='pug'>\n.eg-modal\n  .content\n    slot\n</template>\n\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-modal'\n}\n</script>\n\n<style>\n.eg-modal {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n</style>\n"]}, media: undefined });
+    inject("data-v-216f2e1c_0", { source: "\n.eg-modal {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n", map: {"version":3,"sources":["/home/christian-nils/eagle.js/src/components/widgets/Modal.vue"],"names":[],"mappings":";AAcA;EACA,kBAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;AACA","file":"Modal.vue","sourcesContent":["<template lang='pug'>\n.eg-modal\n  .content\n    slot\n</template>\n\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-modal'\n}\n</script>\n\n<style>\n.eg-modal {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n</style>\n"]}, media: undefined });
 
   };
   /* scoped */
@@ -731,16 +743,20 @@ __vue_render__$2._withStripped = true;
   const __vue_is_functional_template__$3 = false;
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var Modal = normalizeComponent_1(
+  const __vue_component__$3 = normalizeComponent_1(
     { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
     __vue_inject_styles__$3,
     __vue_script__$3,
     __vue_scope_id__$3,
     __vue_is_functional_template__$3,
     __vue_module_identifier__$3,
+    false,
     browser,
+    undefined,
     undefined
   );
 
@@ -818,27 +834,31 @@ __vue_render__$3._withStripped = true;
   /* style */
   const __vue_inject_styles__$4 = function (inject) {
     if (!inject) return
-    inject("data-v-5c3a9fcd_0", { source: ".eg-code-block.container[data-v-5c3a9fcd] {\n  position: relative;\n  width: 100%;\n}\n.eg-code-block .code-box .eg-code-comment[data-v-5c3a9fcd] {\n  display: none;\n}\n.eg-code-block .comments-box[data-v-5c3a9fcd] {\n  position: absolute;\n  color: rgba(0, 0, 0, 0);\n  top: 0;\n}\n.eg-code-block .eg-code-comment[data-v-5c3a9fcd] {\n  z-index: 10 !important;\n}\n\n/*# sourceMappingURL=CodeBlock.vue.map */", map: {"version":3,"sources":["/Users/yao.ding/javascript/eagle.js/src/components/widgets/CodeBlock.vue","CodeBlock.vue"],"names":[],"mappings":"AAgDA;EACA,kBAAA;EACA,WAAA;AC/CA;ADmDA;EACA,aAAA;ACjDA;ADqDA;EACA,kBAAA;EACA,uBAAA;EACA,MAAA;ACnDA;ADuDA;EACA,sBAAA;ACrDA;;AAEA,wCAAwC","file":"CodeBlock.vue","sourcesContent":["<template lang='pug'>\n.eg-code-block.container\n  .box.hljs.code-box(:id='id')\n    pre\n      code(:class=\"lang ? lang : ''\", :id='id3')\n  .box.comments-box\n    pre\n      code(:id='id2')\n        slot\n</template>\n\n<script>\nimport { Options } from '../../main.js'\n\nfunction randId () {\n  return Math.random().toString(36).substr(2, 10)\n}\n\nexport default {\n  isWidget: true,\n  name: 'eg-code-block',\n  props: {\n    id: {default: () => randId()},\n    id2: {default: () => randId()},\n    id3: {default: () => randId()},\n    lang: {default: null}\n  },\n  mounted: function () {\n    this.update()\n  },\n  updated: function () {\n    this.update()\n  },\n  methods: {\n    update: function () {\n      var codeBlock = document.getElementById(this.id)\n      var commentsContent = document.getElementById(this.id2)\n      var codeContent = document.getElementById(this.id3)\n      codeContent.innerHTML = commentsContent.innerHTML\n      if (this.lang && Options.hljs) {\n        Options.hljs.highlightBlock(codeBlock)\n      }\n    }\n  }\n}\n</script>\n<style lang='scss' scoped>\n.eg-code-block {\n  &.container {\n    position: relative;\n    width: 100%;\n  }\n\n  .code-box {\n    .eg-code-comment {\n      display: none\n    }\n  }\n\n  .comments-box {\n    position: absolute;\n    color: rgba(0, 0, 0, 0.0);\n    top: 0;\n\n  }\n\n  .eg-code-comment {\n    z-index: 10 !important;\n  }\n}\n</style>\n",".eg-code-block.container {\n  position: relative;\n  width: 100%;\n}\n.eg-code-block .code-box .eg-code-comment {\n  display: none;\n}\n.eg-code-block .comments-box {\n  position: absolute;\n  color: rgba(0, 0, 0, 0);\n  top: 0;\n}\n.eg-code-block .eg-code-comment {\n  z-index: 10 !important;\n}\n\n/*# sourceMappingURL=CodeBlock.vue.map */"]}, media: undefined });
+    inject("data-v-dc140c92_0", { source: ".eg-code-block.container[data-v-dc140c92] {\n  position: relative;\n  width: 100%;\n}\n.eg-code-block .code-box .eg-code-comment[data-v-dc140c92] {\n  display: none;\n}\n.eg-code-block .comments-box[data-v-dc140c92] {\n  position: absolute;\n  color: rgba(0, 0, 0, 0);\n  top: 0;\n}\n.eg-code-block .eg-code-comment[data-v-dc140c92] {\n  z-index: 10 !important;\n}\n\n/*# sourceMappingURL=CodeBlock.vue.map */", map: {"version":3,"sources":["/home/christian-nils/eagle.js/src/components/widgets/CodeBlock.vue","CodeBlock.vue"],"names":[],"mappings":"AAgDA;EACA,kBAAA;EACA,WAAA;AC/CA;ADmDA;EACA,aAAA;ACjDA;ADqDA;EACA,kBAAA;EACA,uBAAA;EACA,MAAA;ACnDA;ADuDA;EACA,sBAAA;ACrDA;;AAEA,wCAAwC","file":"CodeBlock.vue","sourcesContent":["<template lang='pug'>\n.eg-code-block.container\n  .box.hljs.code-box(:id='id')\n    pre\n      code(:class=\"lang ? lang : ''\", :id='id3')\n  .box.comments-box\n    pre\n      code(:id='id2')\n        slot\n</template>\n\n<script>\nimport { Options } from '../../main.js'\n\nfunction randId () {\n  return Math.random().toString(36).substr(2, 10)\n}\n\nexport default {\n  isWidget: true,\n  name: 'eg-code-block',\n  props: {\n    id: {default: () => randId()},\n    id2: {default: () => randId()},\n    id3: {default: () => randId()},\n    lang: {default: null}\n  },\n  mounted: function () {\n    this.update()\n  },\n  updated: function () {\n    this.update()\n  },\n  methods: {\n    update: function () {\n      var codeBlock = document.getElementById(this.id)\n      var commentsContent = document.getElementById(this.id2)\n      var codeContent = document.getElementById(this.id3)\n      codeContent.innerHTML = commentsContent.innerHTML\n      if (this.lang && Options.hljs) {\n        Options.hljs.highlightBlock(codeBlock)\n      }\n    }\n  }\n}\n</script>\n<style lang='scss' scoped>\n.eg-code-block {\n  &.container {\n    position: relative;\n    width: 100%;\n  }\n\n  .code-box {\n    .eg-code-comment {\n      display: none\n    }\n  }\n\n  .comments-box {\n    position: absolute;\n    color: rgba(0, 0, 0, 0.0);\n    top: 0;\n\n  }\n\n  .eg-code-comment {\n    z-index: 10 !important;\n  }\n}\n</style>\n",".eg-code-block.container {\n  position: relative;\n  width: 100%;\n}\n.eg-code-block .code-box .eg-code-comment {\n  display: none;\n}\n.eg-code-block .comments-box {\n  position: absolute;\n  color: rgba(0, 0, 0, 0);\n  top: 0;\n}\n.eg-code-block .eg-code-comment {\n  z-index: 10 !important;\n}\n\n/*# sourceMappingURL=CodeBlock.vue.map */"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$4 = "data-v-5c3a9fcd";
+  const __vue_scope_id__$4 = "data-v-dc140c92";
   /* module identifier */
   const __vue_module_identifier__$4 = undefined;
   /* functional template */
   const __vue_is_functional_template__$4 = false;
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var CodeBlock = normalizeComponent_1(
+  const __vue_component__$4 = normalizeComponent_1(
     { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
     __vue_inject_styles__$4,
     __vue_script__$4,
     __vue_scope_id__$4,
     __vue_is_functional_template__$4,
     __vue_module_identifier__$4,
+    false,
     browser,
+    undefined,
     undefined
   );
 
@@ -893,7 +913,7 @@ __vue_render__$4._withStripped = true;
   /* style */
   const __vue_inject_styles__$5 = function (inject) {
     if (!inject) return
-    inject("data-v-0cbded58_0", { source: "\n.eg-code-comment {\n  display: inline-block\n}\n", map: {"version":3,"sources":["/Users/yao.ding/javascript/eagle.js/src/components/widgets/CodeComment.vue"],"names":[],"mappings":";AAmBA;EACA;AACA","file":"CodeComment.vue","sourcesContent":["<template lang='pug'>\neg-transition(:enter='enter', :leave='leave')\n  div.eg-code-comment(v-if='active')\n    span(v-if='arrow') &larr;\n    slot\n</template>\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-code-comment',\n  props: {\n    enter: {default: null},\n    leave: {default: null},\n    active: {default: true},\n    arrow: {default: true}\n  }\n}\n</script>\n<style>\n.eg-code-comment {\n  display: inline-block\n}\n</style>\n"]}, media: undefined });
+    inject("data-v-837269a4_0", { source: "\n.eg-code-comment {\n  display: inline-block\n}\n", map: {"version":3,"sources":["/home/christian-nils/eagle.js/src/components/widgets/CodeComment.vue"],"names":[],"mappings":";AAmBA;EACA;AACA","file":"CodeComment.vue","sourcesContent":["<template lang='pug'>\neg-transition(:enter='enter', :leave='leave')\n  div.eg-code-comment(v-if='active')\n    span(v-if='arrow') &larr;\n    slot\n</template>\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-code-comment',\n  props: {\n    enter: {default: null},\n    leave: {default: null},\n    active: {default: true},\n    arrow: {default: true}\n  }\n}\n</script>\n<style>\n.eg-code-comment {\n  display: inline-block\n}\n</style>\n"]}, media: undefined });
 
   };
   /* scoped */
@@ -904,16 +924,20 @@ __vue_render__$4._withStripped = true;
   const __vue_is_functional_template__$5 = false;
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var CodeComment = normalizeComponent_1(
+  const __vue_component__$5 = normalizeComponent_1(
     { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
     __vue_inject_styles__$5,
     __vue_script__$5,
     __vue_scope_id__$5,
     __vue_is_functional_template__$5,
     __vue_module_identifier__$5,
+    false,
     browser,
+    undefined,
     undefined
   );
 
@@ -979,27 +1003,31 @@ __vue_render__$5._withStripped = true;
   /* style */
   const __vue_inject_styles__$6 = function (inject) {
     if (!inject) return
-    inject("data-v-7848429c_0", { source: ".eg-switch[data-v-7848429c] {\n  /* The slider */\n}\n.eg-switch p[data-v-7848429c] {\n  display: inline;\n}\n.eg-switch .switch[data-v-7848429c] {\n  position: relative;\n  display: inline-block;\n  width: 2em;\n  height: 1em;\n}\n.eg-switch .switch input[data-v-7848429c] {\n  display: none;\n}\n.eg-switch .slider[data-v-7848429c] {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-switch .sliderdot[data-v-7848429c] {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0.8em;\n  width: 0.8em;\n  left: 0.1em;\n  bottom: 0.1em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.4em;\n}\n.eg-switch .sliderdot.checked[data-v-7848429c] {\n  -webkit-transform: translateX(1em);\n  -ms-transform: translateX(1em);\n  transform: translateX(1em);\n}\n\n/*# sourceMappingURL=Toggle.vue.map */", map: {"version":3,"sources":["/Users/yao.ding/javascript/eagle.js/src/components/widgets/Toggle.vue","Toggle.vue"],"names":[],"mappings":"AAuCA;EAgBA,eAAA;ACrDA;ADsCA;EACA,eAAA;ACpCA;ADuCA;EACA,kBAAA;EACA,qBAAA;EACA,UAAA;EACA,WAAA;ACrCA;ADwCA;EACA,aAAA;ACtCA;AD0CA;EACA,kBAAA;EACA,eAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,SAAA;EACA,sBAAA;EACA,wBAAA;EACA,gBAAA;EACA,oBAAA;ACxCA;AD2CA;EACA,kBAAA;EACA,eAAA;EACA,WAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,wBAAA;EACA,gBAAA;EACA,oBAAA;ACzCA;AD4CA;EACA,kCAAA;EACA,8BAAA;EACA,0BAAA;AC1CA;;AAEA,qCAAqC","file":"Toggle.vue","sourcesContent":["<template lang='pug'>\n.eg-switch\n  .switch(:style=\"{'font-size': fontsize}\", @click='toggle')\n\n    input(type='checkbox', :checked='checked')\n    .slider(:class=\"{checked: checked}\")\n    .sliderdot(:class=\"{checked: checked}\")\n\n  span(:class=\"{unchecked: !checked}\")\n    slot\n</template>\n\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-toggle',\n  props: {\n    value: {default: true},\n    fontsize: {default: '0.8em'}\n  },\n  data: function () {\n    return {\n      checked: this.value\n    }\n  },\n  methods: {\n    toggle: function () {\n      this.checked = !this.checked\n    }\n  },\n  watch: {\n    checked: function (val) {\n      this.$emit('input', val)\n    }\n  }\n}\n</script>\n<style lang=\"scss\" scoped>\n\n.eg-switch {\n  p {\n    display: inline;\n  }\n\n  .switch {\n    position: relative;\n    display: inline-block;\n    width: 2em;\n    height: 1em;\n  }\n\n  .switch input {\n    display:none;\n  }\n\n  /* The slider */\n  .slider {\n    position: absolute;\n    cursor: pointer;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: #ccc;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: 0.5em;\n  }\n\n  .sliderdot {\n    position: absolute;\n    cursor: pointer;\n    content: \"\";\n    height: 0.8em;\n    width: 0.8em;\n    left: 0.1em;\n    bottom: 0.1em;\n    background-color: white;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: .4em;\n  }\n\n  .sliderdot.checked {\n    -webkit-transform: translateX(1em);\n    -ms-transform: translateX(1em);\n    transform: translateX(1em);\n\n  }\n}\n</style>\n",".eg-switch {\n  /* The slider */\n}\n.eg-switch p {\n  display: inline;\n}\n.eg-switch .switch {\n  position: relative;\n  display: inline-block;\n  width: 2em;\n  height: 1em;\n}\n.eg-switch .switch input {\n  display: none;\n}\n.eg-switch .slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-switch .sliderdot {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0.8em;\n  width: 0.8em;\n  left: 0.1em;\n  bottom: 0.1em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.4em;\n}\n.eg-switch .sliderdot.checked {\n  -webkit-transform: translateX(1em);\n  -ms-transform: translateX(1em);\n  transform: translateX(1em);\n}\n\n/*# sourceMappingURL=Toggle.vue.map */"]}, media: undefined });
+    inject("data-v-21cc3686_0", { source: ".eg-switch[data-v-21cc3686] {\n  /* The slider */\n}\n.eg-switch p[data-v-21cc3686] {\n  display: inline;\n}\n.eg-switch .switch[data-v-21cc3686] {\n  position: relative;\n  display: inline-block;\n  width: 2em;\n  height: 1em;\n}\n.eg-switch .switch input[data-v-21cc3686] {\n  display: none;\n}\n.eg-switch .slider[data-v-21cc3686] {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-switch .sliderdot[data-v-21cc3686] {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0.8em;\n  width: 0.8em;\n  left: 0.1em;\n  bottom: 0.1em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.4em;\n}\n.eg-switch .sliderdot.checked[data-v-21cc3686] {\n  -webkit-transform: translateX(1em);\n  -ms-transform: translateX(1em);\n  transform: translateX(1em);\n}\n\n/*# sourceMappingURL=Toggle.vue.map */", map: {"version":3,"sources":["/home/christian-nils/eagle.js/src/components/widgets/Toggle.vue","Toggle.vue"],"names":[],"mappings":"AAuCA;EAgBA,eAAA;ACrDA;ADsCA;EACA,eAAA;ACpCA;ADuCA;EACA,kBAAA;EACA,qBAAA;EACA,UAAA;EACA,WAAA;ACrCA;ADwCA;EACA,aAAA;ACtCA;AD0CA;EACA,kBAAA;EACA,eAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,SAAA;EACA,sBAAA;EACA,wBAAA;EACA,gBAAA;EACA,oBAAA;ACxCA;AD2CA;EACA,kBAAA;EACA,eAAA;EACA,WAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,wBAAA;EACA,gBAAA;EACA,oBAAA;ACzCA;AD4CA;EACA,kCAAA;EACA,8BAAA;EACA,0BAAA;AC1CA;;AAEA,qCAAqC","file":"Toggle.vue","sourcesContent":["<template lang='pug'>\n.eg-switch\n  .switch(:style=\"{'font-size': fontsize}\", @click='toggle')\n\n    input(type='checkbox', :checked='checked')\n    .slider(:class=\"{checked: checked}\")\n    .sliderdot(:class=\"{checked: checked}\")\n\n  span(:class=\"{unchecked: !checked}\")\n    slot\n</template>\n\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-toggle',\n  props: {\n    value: {default: true},\n    fontsize: {default: '0.8em'}\n  },\n  data: function () {\n    return {\n      checked: this.value\n    }\n  },\n  methods: {\n    toggle: function () {\n      this.checked = !this.checked\n    }\n  },\n  watch: {\n    checked: function (val) {\n      this.$emit('input', val)\n    }\n  }\n}\n</script>\n<style lang=\"scss\" scoped>\n\n.eg-switch {\n  p {\n    display: inline;\n  }\n\n  .switch {\n    position: relative;\n    display: inline-block;\n    width: 2em;\n    height: 1em;\n  }\n\n  .switch input {\n    display:none;\n  }\n\n  /* The slider */\n  .slider {\n    position: absolute;\n    cursor: pointer;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: #ccc;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: 0.5em;\n  }\n\n  .sliderdot {\n    position: absolute;\n    cursor: pointer;\n    content: \"\";\n    height: 0.8em;\n    width: 0.8em;\n    left: 0.1em;\n    bottom: 0.1em;\n    background-color: white;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: .4em;\n  }\n\n  .sliderdot.checked {\n    -webkit-transform: translateX(1em);\n    -ms-transform: translateX(1em);\n    transform: translateX(1em);\n\n  }\n}\n</style>\n",".eg-switch {\n  /* The slider */\n}\n.eg-switch p {\n  display: inline;\n}\n.eg-switch .switch {\n  position: relative;\n  display: inline-block;\n  width: 2em;\n  height: 1em;\n}\n.eg-switch .switch input {\n  display: none;\n}\n.eg-switch .slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-switch .sliderdot {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0.8em;\n  width: 0.8em;\n  left: 0.1em;\n  bottom: 0.1em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.4em;\n}\n.eg-switch .sliderdot.checked {\n  -webkit-transform: translateX(1em);\n  -ms-transform: translateX(1em);\n  transform: translateX(1em);\n}\n\n/*# sourceMappingURL=Toggle.vue.map */"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$6 = "data-v-7848429c";
+  const __vue_scope_id__$6 = "data-v-21cc3686";
   /* module identifier */
   const __vue_module_identifier__$6 = undefined;
   /* functional template */
   const __vue_is_functional_template__$6 = false;
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var Toggle = normalizeComponent_1(
+  const __vue_component__$6 = normalizeComponent_1(
     { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
     __vue_inject_styles__$6,
     __vue_script__$6,
     __vue_scope_id__$6,
     __vue_is_functional_template__$6,
     __vue_module_identifier__$6,
+    false,
     browser,
+    undefined,
     undefined
   );
 
@@ -1062,34 +1090,38 @@ __vue_render__$6._withStripped = true;
   /* style */
   const __vue_inject_styles__$7 = function (inject) {
     if (!inject) return
-    inject("data-v-2c78d29a_0", { source: ".eg-radio[data-v-2c78d29a] {\n  /* The slider */\n}\n.eg-radio p[data-v-2c78d29a] {\n  display: inline;\n}\n.eg-radio .radiobutton[data-v-2c78d29a] {\n  position: relative;\n  display: inline-block;\n  width: 1em;\n  height: 1em;\n}\n.eg-radio .radio[data-v-2c78d29a] {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-radio .radiodot[data-v-2c78d29a] {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0em;\n  width: 0em;\n  left: 0.5em;\n  bottom: 0.5em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 50%;\n}\n.eg-radio .radiodot.checked[data-v-2c78d29a] {\n  height: 0.9em;\n  width: 0.9em;\n  left: 0.05em;\n  bottom: 0.05em;\n}\n\n/*# sourceMappingURL=RadioButton.vue.map */", map: {"version":3,"sources":["/Users/yao.ding/javascript/eagle.js/src/components/widgets/RadioButton.vue","RadioButton.vue"],"names":[],"mappings":"AA0BA;EAYA,eAAA;ACpCA;ADyBA;EACA,eAAA;ACvBA;AD0BA;EACA,kBAAA;EACA,qBAAA;EACA,UAAA;EACA,WAAA;ACxBA;AD4BA;EACA,kBAAA;EACA,eAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,SAAA;EACA,wBAAA;EACA,gBAAA;EACA,oBAAA;AC1BA;AD6BA;EACA,kBAAA;EACA,eAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,wBAAA;EACA,gBAAA;EACA,kBAAA;AC3BA;AD8BA;EACA,aAAA;EACA,YAAA;EACA,YAAA;EACA,cAAA;AC5BA;;AAEA,0CAA0C","file":"RadioButton.vue","sourcesContent":["<template lang='pug'>\n.eg-radio\n  .radiobutton(:style=\"{'font-size': fontsize}\", @click='select')\n    .radio\n    .radiodot(:class=\"{checked: value === label}\")\n  slot\n</template>\n\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-radio-button',\n  props: {\n    value: {default: null},\n    label: {default: null},\n    fontsize: {default: '0.7em'}\n  },\n  methods: {\n    select: function () {\n      this.$emit('input', this.label)\n    }\n  }\n}\n</script>\n\n<style lang=\"scss\" scoped>\n.eg-radio {\n  p {\n    display: inline;\n  }\n\n  .radiobutton {\n    position: relative;\n    display: inline-block;\n    width: 1em;\n    height: 1em;\n  }\n\n  /* The slider */\n  .radio {\n    position: absolute;\n    cursor: pointer;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: 0.5em;\n  }\n\n  .radiodot {\n    position: absolute;\n    cursor: pointer;\n    content: \"\";\n    height: 0em;\n    width: 0em;\n    left: 0.5em;\n    bottom: 0.5em;\n    background-color: white;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: 50%;\n  }\n\n  .radiodot.checked {\n    height: .9em;\n    width: .9em;\n    left: 0.05em;\n    bottom: 0.05em;\n  }\n}\n</style>\n",".eg-radio {\n  /* The slider */\n}\n.eg-radio p {\n  display: inline;\n}\n.eg-radio .radiobutton {\n  position: relative;\n  display: inline-block;\n  width: 1em;\n  height: 1em;\n}\n.eg-radio .radio {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-radio .radiodot {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0em;\n  width: 0em;\n  left: 0.5em;\n  bottom: 0.5em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 50%;\n}\n.eg-radio .radiodot.checked {\n  height: 0.9em;\n  width: 0.9em;\n  left: 0.05em;\n  bottom: 0.05em;\n}\n\n/*# sourceMappingURL=RadioButton.vue.map */"]}, media: undefined });
+    inject("data-v-0de56109_0", { source: ".eg-radio[data-v-0de56109] {\n  /* The slider */\n}\n.eg-radio p[data-v-0de56109] {\n  display: inline;\n}\n.eg-radio .radiobutton[data-v-0de56109] {\n  position: relative;\n  display: inline-block;\n  width: 1em;\n  height: 1em;\n}\n.eg-radio .radio[data-v-0de56109] {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-radio .radiodot[data-v-0de56109] {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0em;\n  width: 0em;\n  left: 0.5em;\n  bottom: 0.5em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 50%;\n}\n.eg-radio .radiodot.checked[data-v-0de56109] {\n  height: 0.9em;\n  width: 0.9em;\n  left: 0.05em;\n  bottom: 0.05em;\n}\n\n/*# sourceMappingURL=RadioButton.vue.map */", map: {"version":3,"sources":["/home/christian-nils/eagle.js/src/components/widgets/RadioButton.vue","RadioButton.vue"],"names":[],"mappings":"AA0BA;EAYA,eAAA;ACpCA;ADyBA;EACA,eAAA;ACvBA;AD0BA;EACA,kBAAA;EACA,qBAAA;EACA,UAAA;EACA,WAAA;ACxBA;AD4BA;EACA,kBAAA;EACA,eAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,SAAA;EACA,wBAAA;EACA,gBAAA;EACA,oBAAA;AC1BA;AD6BA;EACA,kBAAA;EACA,eAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,wBAAA;EACA,gBAAA;EACA,kBAAA;AC3BA;AD8BA;EACA,aAAA;EACA,YAAA;EACA,YAAA;EACA,cAAA;AC5BA;;AAEA,0CAA0C","file":"RadioButton.vue","sourcesContent":["<template lang='pug'>\n.eg-radio\n  .radiobutton(:style=\"{'font-size': fontsize}\", @click='select')\n    .radio\n    .radiodot(:class=\"{checked: value === label}\")\n  slot\n</template>\n\n<script>\nexport default {\n  isWidget: true,\n  name: 'eg-radio-button',\n  props: {\n    value: {default: null},\n    label: {default: null},\n    fontsize: {default: '0.7em'}\n  },\n  methods: {\n    select: function () {\n      this.$emit('input', this.label)\n    }\n  }\n}\n</script>\n\n<style lang=\"scss\" scoped>\n.eg-radio {\n  p {\n    display: inline;\n  }\n\n  .radiobutton {\n    position: relative;\n    display: inline-block;\n    width: 1em;\n    height: 1em;\n  }\n\n  /* The slider */\n  .radio {\n    position: absolute;\n    cursor: pointer;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: 0.5em;\n  }\n\n  .radiodot {\n    position: absolute;\n    cursor: pointer;\n    content: \"\";\n    height: 0em;\n    width: 0em;\n    left: 0.5em;\n    bottom: 0.5em;\n    background-color: white;\n    -webkit-transition: .4s;\n    transition: .4s;\n    border-radius: 50%;\n  }\n\n  .radiodot.checked {\n    height: .9em;\n    width: .9em;\n    left: 0.05em;\n    bottom: 0.05em;\n  }\n}\n</style>\n",".eg-radio {\n  /* The slider */\n}\n.eg-radio p {\n  display: inline;\n}\n.eg-radio .radiobutton {\n  position: relative;\n  display: inline-block;\n  width: 1em;\n  height: 1em;\n}\n.eg-radio .radio {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 0.5em;\n}\n.eg-radio .radiodot {\n  position: absolute;\n  cursor: pointer;\n  content: \"\";\n  height: 0em;\n  width: 0em;\n  left: 0.5em;\n  bottom: 0.5em;\n  background-color: white;\n  -webkit-transition: 0.4s;\n  transition: 0.4s;\n  border-radius: 50%;\n}\n.eg-radio .radiodot.checked {\n  height: 0.9em;\n  width: 0.9em;\n  left: 0.05em;\n  bottom: 0.05em;\n}\n\n/*# sourceMappingURL=RadioButton.vue.map */"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$7 = "data-v-2c78d29a";
+  const __vue_scope_id__$7 = "data-v-0de56109";
   /* module identifier */
   const __vue_module_identifier__$7 = undefined;
   /* functional template */
   const __vue_is_functional_template__$7 = false;
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var RadioButton = normalizeComponent_1(
+  const __vue_component__$7 = normalizeComponent_1(
     { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
     __vue_inject_styles__$7,
     __vue_script__$7,
     __vue_scope_id__$7,
     __vue_is_functional_template__$7,
     __vue_module_identifier__$7,
+    false,
     browser,
+    undefined,
     undefined
   );
 
 var script$8 = {
   isWidget: true,
   name: 'eg-image-slide',
-  mixins: [Slide],
+  mixins: [__vue_component__$1],
   props: {
     url: {
       "default": 'https://i.imgur.com/P7iyH.png'
@@ -1145,15 +1177,19 @@ __vue_render__$7._withStripped = true;
   
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var ImageSlide = normalizeComponent_1(
+  const __vue_component__$8 = normalizeComponent_1(
     { render: __vue_render__$7, staticRenderFns: __vue_staticRenderFns__$7 },
     __vue_inject_styles__$8,
     __vue_script__$8,
     __vue_scope_id__$8,
     __vue_is_functional_template__$8,
     __vue_module_identifier__$8,
+    false,
+    undefined,
     undefined,
     undefined
   );
@@ -1244,15 +1280,19 @@ __vue_render__$8._withStripped = true;
   
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var TriggeredMessage = normalizeComponent_1(
+  const __vue_component__$9 = normalizeComponent_1(
     { render: __vue_render__$8, staticRenderFns: __vue_staticRenderFns__$8 },
     __vue_inject_styles__$9,
     __vue_script__$9,
     __vue_scope_id__$9,
     __vue_is_functional_template__$9,
     __vue_module_identifier__$9,
+    false,
+    undefined,
     undefined,
     undefined
   );
@@ -1315,27 +1355,31 @@ __vue_render__$9._withStripped = true;
   /* style */
   const __vue_inject_styles__$a = function (inject) {
     if (!inject) return
-    inject("data-v-b8b192c0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Timer.vue"}, media: undefined });
+    inject("data-v-0a7b438a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Timer.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$a = "data-v-b8b192c0";
+  const __vue_scope_id__$a = "data-v-0a7b438a";
   /* module identifier */
   const __vue_module_identifier__$a = undefined;
   /* functional template */
   const __vue_is_functional_template__$a = false;
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
-  var Timer = normalizeComponent_1(
+  const __vue_component__$a = normalizeComponent_1(
     { render: __vue_render__$9, staticRenderFns: __vue_staticRenderFns__$9 },
     __vue_inject_styles__$a,
     __vue_script__$a,
     __vue_scope_id__$a,
     __vue_is_functional_template__$a,
     __vue_module_identifier__$a,
+    false,
     browser,
+    undefined,
     undefined
   );
 
@@ -1520,8 +1564,8 @@ var Options = {
 };
 var main = {
   install: function install(Vue) {
-    Vue.component('slide', Slide);
-    Vue.component('eg-transition', Transition);
+    Vue.component('slide', __vue_component__$1);
+    Vue.component('eg-transition', __vue_component__$2);
   },
   use: function use(extension, config) {
     if (extension.isPlugin) {
@@ -1535,4 +1579,4 @@ var main = {
 };
 
 export default main;
-export { CodeBlock, CodeComment, ImageSlide, Modal, Options, presenter as Presenter, RadioButton, Slide, Slideshow, Timer, Toggle, Transition, TriggeredMessage, zoom as Zoom };
+export { __vue_component__$4 as CodeBlock, __vue_component__$5 as CodeComment, __vue_component__$8 as ImageSlide, __vue_component__$3 as Modal, Options, presenter as Presenter, __vue_component__$7 as RadioButton, __vue_component__$1 as Slide, __vue_component__ as Slideshow, __vue_component__$a as Timer, __vue_component__$6 as Toggle, __vue_component__$2 as Transition, __vue_component__$9 as TriggeredMessage, zoom as Zoom };
